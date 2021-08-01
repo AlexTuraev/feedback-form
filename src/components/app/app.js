@@ -58,7 +58,7 @@ const App = () => {
                 error = /^\w+@[\w]{1,63}[.]+[a-z, A-Z]{2,5}$/.test(value) ? false : true;
                 break;
             case 'phone':
-                error = /^[+]?[\d]{10,11}$/.test(value) ? false : true;
+                error = (/^[+][\d]{11}$/.test(value)) || (/^[\d]{10,11}$/.test(value)) ? false : true;
                 break;
             case 'message':
                 error = (value.length < 7) ? true : false;
